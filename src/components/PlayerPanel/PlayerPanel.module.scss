@@ -1,0 +1,49 @@
+// /* PlayerPanel.module.scss */
+
+@import 'constants/variables.scss';
+
+.player-panel {
+  background: $background-color;
+  border-radius: 12px;
+  border: $border-primary; /* White */
+  box-shadow: $box-shadow;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family : $font-family;
+  flex: 0 0 20%;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary-color; /* Green */
+    margin-bottom: 16px;
+    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  button {
+    background-color: $secondary-color; /* Blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: $padding;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+    &:disabled {
+      background-color: $grey-color; /* Gray */
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      background-color: #0000cc; /* Darker Blue */
+    }
+  }
+}

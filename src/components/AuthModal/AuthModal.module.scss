@@ -1,0 +1,66 @@
+/* AuthModal.module.scss */
+@import 'constants/variables.scss';
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $background-color;
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family : $font-family;
+  z-index: 2;
+
+  &__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary-color; /* Green */
+    margin-bottom: 16px;
+  }
+
+  input {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+
+  // button {
+  //   background-color: $primary-color; /* Green */
+  //   color: $background-color;
+  //   border: none;
+  //   border-radius: 8px;
+  //   padding: $padding;
+  //   font-size: 16px;
+  //   cursor: pointer;
+  //   transition: background-color 0.3s ease;
+
+  //   &:hover {
+  //     background-color: #009900; /* Darker Green */
+  //   }
+  // }
+
+
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}

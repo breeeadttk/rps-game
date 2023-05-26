@@ -1,0 +1,50 @@
+/* Button.module.scss */
+
+@import 'constants/variables.scss';
+
+.button {
+  background-color: $secondary-color;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: $padding;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family : $font-family;
+
+  &:disabled {
+    background-color: $grey-color;
+    cursor: not-allowed;
+  }
+
+  // &:hover:not(:disabled) {
+  //   background-color: #0000cc;
+  // }
+
+
+
+  &.disabled {
+    background-color: $grey-color;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: $secondary-color;
+  color: #ffffff;
+
+  &:hover:not(:disabled) {
+    background-color: #0000cc;
+  }
+}
+
+.secondary {
+  background-color: $primary-color;
+  color: $background-color;
+
+
+  &:hover:not(:disabled) {
+    background-color: #009900;
+  }
+}

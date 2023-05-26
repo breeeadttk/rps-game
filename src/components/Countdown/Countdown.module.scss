@@ -1,0 +1,23 @@
+
+@import 'constants/variables.scss';
+
+.countdown {
+  font-family : $font-family;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: $background-color;
+  padding: $padding;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+}
+
+.countdownNumber{
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.countdown-message {
+  font-size: 18px;
+  margin-bottom: 8px;
+}

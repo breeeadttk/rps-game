@@ -1,0 +1,48 @@
+/* Leaderboard.module.scss */
+
+@import 'constants/variables.scss';
+
+.leaderboard {
+  background-color: $background-color;
+  border-radius: 12px;
+  border: $border-primary;
+  box-shadow: $box-shadow;
+  padding: 24px;
+  font-family : $font-family;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+
+    th {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 8px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    td {
+      padding: 8px;
+      color: #ffffff;
+
+      &:nth-child(odd) {
+        background-color: #111111;
+      }
+
+      &:nth-child(even) {
+        background-color: #222222;
+      }
+    }
+  }
+}
+

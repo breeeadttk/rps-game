@@ -1,0 +1,56 @@
+/* ResultPanel.module.scss */
+@import 'constants/variables.scss';
+
+.result {
+  &-panel {
+    background: $background-color;
+    border-radius: 12px;
+    border: $border-primary; /* White */
+    box-shadow: $box-shadow;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family : $font-family;
+    width: 300px;
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: $primary-color; /* Green */
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 14px;
+      height: 24px; /* Fixed height */
+
+      span {
+        color: #ffff00; /* Yellow */
+      }
+
+      &.result-game {
+        font-size: 24px;
+
+        color: #ff0000; /* Red */
+        margin-bottom: 24px;
+      }
+    }
+
+    button {
+      background-color: $primary-color; /* Green */
+      color: $background-color;
+      border: none;
+      border-radius: 8px;
+      padding: $padding;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #009900; /* Darker Green */
+      }
+    }
+  }
+}
