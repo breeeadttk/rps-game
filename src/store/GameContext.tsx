@@ -5,28 +5,30 @@ interface GameContextProps {
   setPlayerName: (name: string) => void;
 }
 
-export const GameContext = createContext<GameContextProps>({
-  playerName: '',
-  setPlayerName: () => {},
-});
+ const GameContext = createContext<GameContextProps>({
+   playerName: '',
+   setPlayerName: () => {},
+ });
 
 interface GameProviderProps {
   children: ReactNode;
 }
 
-export const GameProvider: React.FC<GameProviderProps> = ({ children }) => {
-  const [playerName, setPlayerName] = useState('Guest');
+ const GameProvider: React.FC<GameProviderProps> = ({ children }) => {
+   const [playerName, setPlayerName] = useState('Guest');
 
-  const handleSetPlayerName = (name: string) => {
-    setPlayerName(name);
-    localStorage.setItem('playerName', name);
-  };
+   const handleSetPlayerName = (name: string) => {
+     setPlayerName(name);
+     localStorage.setItem('playerName', name);
+   };
 
-  return (
-    <GameContext.Provider
-      value={{ playerName, setPlayerName: handleSetPlayerName }}
-    >
-      {children}
-    </GameContext.Provider>
-  );
-};
+   return (
+     <GameContext.Provider
+       value={{ playerName, setPlayerName: handleSetPlayerName }}
+     >
+       {children}
+     </GameContext.Provider>
+   );
+ };
+
+export { GameContext, GameProvider };

@@ -26,7 +26,7 @@ interface GameLogic {
 const useGameLogic = (
   weapons: Weapon[],
   rules: Rules,
-  playerName?: string
+  playerName: string
 ): GameLogic => {
   const [playerWeapon, setPlayerWeapon] = useState<Weapon>('');
   const [computerWeapon, setComputerWeapon] = useState<Weapon>('');
@@ -40,8 +40,7 @@ const useGameLogic = (
   const [isGameInProgress, setIsGameInProgress] = useState<boolean>(false);
   const [isWeaponChosen, setIsWeaponChosen] = useState<boolean>(false);
 
-  const gameTimeoutRef = useRef<NodeJS.Timeout | number | null>(null);
-
+  const gameTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
   // Retrieve stored score from local storage
   const getStoredScore = useCallback(() => {
     const scoresString = localStorage.getItem('scores');

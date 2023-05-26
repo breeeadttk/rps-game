@@ -74,7 +74,7 @@ If you want to add a new weapon called "Lizard" and define the rules for it, you
 
 ```javascript
 // Add "Lizard" to the WEAPONS array
-export const WEAPONS: ReadonlyArray<string> = [
+export const WEAPONS: = [
   'rock',
   'paper',
   'scissors',
@@ -82,7 +82,7 @@ export const WEAPONS: ReadonlyArray<string> = [
 ];
 
 // Update the RULES array to include rules for "Lizard"
-export const RULES: ReadonlyArray<ReadonlyArray<number>> = [
+export const RULES: = [
   [0, 2, 1, 1],    // rock wins against scissors and lizard, scissors wins against paper, lizard wins against paper
   [1, 0, 2, 2],    // paper wins against rock and lizard, rock wins against scissors, lizard wins against paper
   [2, 1, 0, 2],    // scissors wins against paper and lizard, paper wins against rock, lizard wins against rock
