@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import Button from 'components/Button';
+import Button from 'common/Button';
 import styles from './OpponentPanel.module.scss';
 
 interface OpponentPanelProps {

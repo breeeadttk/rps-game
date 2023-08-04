@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PlayerPanel.module.scss';
 
-import Button from 'components/Button';
+import Button from 'common/Button';
 
 // Hooks
 import { WEAPONS } from 'constants/index';

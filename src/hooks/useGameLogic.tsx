@@ -55,6 +55,21 @@ const useGameLogic = (
     }
   }, [playerName]);
 
+  // Cleanup the timeout on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeout(gameTimeoutRef.current);
+    };
+  }, []);
+
+  // Retrieve stored score when the component mounts
+  useEffect(() => {
+    if (playerName) {
+      getStoredScore();
+      // scoreFromStoreRef.current = true;
+    }
+  }, [getStoredScore, playerName]);
+
   // Choose a weapon
   const chooseWeapon = useCallback(
     (weapon: Weapon) => {
@@ -158,21 +173,6 @@ const useGameLogic = (
       calculateResult();
     }, 3000);
   };
-
-  // Cleanup the timeout on unmount
-  useEffect(() => {
-    return () => {
-      clearTimeout(gameTimeoutRef.current);
-    };
-  }, []);
-
-  // Retrieve stored score when the component mounts
-  useEffect(() => {
-    if (playerName) {
-      getStoredScore();
-      // scoreFromStoreRef.current = true;
-    }
-  }, [getStoredScore, playerName]);
 
   return {
     playerWeapon,

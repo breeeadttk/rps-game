@@ -1,94 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
+import { Outlet } from 'react-router-dom'; // Import Outlet to render nested routes
 
-// Components
-import AuthModal from './components/AuthModal';
-import Button from './components/Button';
-import Countdown from './components/Countdown';
-import OpponentPanel from './components/OpponentPanel';
-import ScorePanel from './components/ScorePanel';
-import PlayerPanel from './components/PlayerPanel';
-import ResultPanel from './components/ResultPanel';
-import Leaderboard from './components/Leaderboard';
-
-// Store
-import { GameContext } from 'store/GameContext';
-
-// Hooks
-import { WEAPONS, RULES } from './constants/index';
-
-// Hooks
-import useGameLogic from './hooks/useGameLogic';
-
+// Styles
 import styles from './App.module.scss';
+import './App.css'; // Import your global styles if needed
 
-const App: React.FC = () => {
-  const { playerName, setPlayerName } = useContext(GameContext);
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleSavePlayerName = (name: string) => {
-    setPlayerName(name);
-    setIsModalOpen(false);
-  };
-
-  const {
-    playerWeapon,
-    computerWeapon,
-    result,
-    score,
-    isGameInProgress,
-    isWeaponChosen,
-    chooseWeapon,
-    startNewGame,
-  } = useGameLogic(WEAPONS, RULES, playerName);
-
+const App = () => {
   return (
     <div className={styles['app']}>
-      {
-        <AuthModal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          onSavePlayerName={handleSavePlayerName}
-        />
-      }
-      <div className={styles['game-area']}>
-        {/* PlayerPanel component */}
-        <div className={styles['players-board']}>
-          <PlayerPanel
-            chooseWeapon={chooseWeapon}
-            isWeaponsDisabled={!isGameInProgress || isWeaponChosen}
-          />
-
-          <div className={styles['game-board']}>
-            {/* Countdown component */}
-            {isGameInProgress && <Countdown seconds={3} />}
-            {!isGameInProgress && (
-              <Button variant='primary' onClick={startNewGame}>
-                Start New Game
-              </Button>
-            )}
-          </div>
-          {/* OpponentPanel component */}
-          <OpponentPanel
-            weapon={computerWeapon}
-            gameEnded={!isGameInProgress}
-          />
-        </div>
-        <ResultPanel
-          playerWeapon={playerWeapon}
-          computerWeapon={computerWeapon}
-          result={result}
-          playAgain={startNewGame}
-        />
-      </div>
-      <div className={styles['score-area']}>
-        <ScorePanel playerName={playerName} score={score} />
-
-        <Leaderboard />
-      </div>
+      <Outlet />
     </div>
   );
 };

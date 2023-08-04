@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './AuthModal.module.scss';
 
 // Components
-import Button from 'components/Button';
+import Button from 'common/Button';
 
 interface AuthModalProps {
   onSavePlayerName: (playerName: string) => void;
